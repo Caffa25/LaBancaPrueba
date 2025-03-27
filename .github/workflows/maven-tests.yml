@@ -22,6 +22,7 @@ jobs:
         java-version: '21'
 
     - name: Build and run tests with Maven
+      working-directory: fibonacci-api   
       run: mvn clean test --batch-mode
 
     - name: Upload test results on failure
@@ -29,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: test-results
-        path: target/surefire-reports/*.xml
+        path: fibonacci-api/target/surefire-reports/*.xml   
