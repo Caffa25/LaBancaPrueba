@@ -1,4 +1,7 @@
+com\fibonacci\business\FibonacciStatsService.class
+com\fibonacci\data\FibonacciStatsRepository.class
 com\fibonacci\FibonacciApiApplication.class
+com\fibonacci\model\FibonacciStats.class
 com\fibonacci\data\FibonacciRepository.class
 com\fibonacci\model\FibonacciNumber.class
 com\fibonacci\business\FibonacciService.class

@@ -1,6 +1,8 @@
 package com.fibonacci.controller;
 
 import com.fibonacci.business.FibonacciService;
+import com.fibonacci.data.FibonacciStatsRepository;
+import com.fibonacci.model.FibonacciStats;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -9,8 +11,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -25,25 +28,24 @@ public class FibonacciControllerTest {
     @MockBean
     private FibonacciService service;
 
-    @Autowired
-    private WebApplicationContext context;
+    @MockBean
+    private FibonacciStatsRepository statsRepository; 
 
     @BeforeEach
     void setUp() {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
 
     @Test
     void shouldReturnFibonacciNumber() throws Exception {
         int input = 6;
-        long expectedResult = 8; // Fibonacci(6) = 8
+        long expectedResult = 8; 
 
         Mockito.when(service.getFibonacci(input)).thenReturn(expectedResult);
 
         mockMvc.perform(get("/fibonacci/" + input)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(" Fibonacci number: 8"));
+                .andExpect(content().string("Fibonacci number: 8")); 
     }
 
     @Test
@@ -64,5 +66,20 @@ public class FibonacciControllerTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().string("Invalid input: n must be a positive integer."));
+    }
+
+    @Test
+    void shouldReturnFibonacciStats() throws Exception {
+        List<FibonacciStats> mockStats = Arrays.asList(
+                new FibonacciStats(5, 3),
+                new FibonacciStats(8, 7)
+        );
+
+        Mockito.when(statsRepository.findAll()).thenReturn(mockStats);
+
+        mockMvc.perform(get("/fibonacci/stats")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().json("[{\"n\":5,\"count\":3},{\"n\":8,\"count\":7}]"));
     }
 }

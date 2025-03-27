@@ -1,3 +1,5 @@
+com\fibonacci\model\FibonacciStatsTest.class
+com\fibonacci\controller\FibonacciControllerTest.class
 com\fibonacci\model\FibonacciNumberTest.class
 com\fibonacci\business\FibonacciServiceTest.class
-com\fibonacci\controller\FibonacciControllerTest.class
+com\fibonacci\business\FibonacciStatsServiceTest.class

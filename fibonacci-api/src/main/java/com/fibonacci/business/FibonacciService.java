@@ -9,9 +9,11 @@ import java.util.Optional;
 public class FibonacciService {
 
     private final FibonacciRepository repository;
+    private final FibonacciStatsService statsService;
 
-    public FibonacciService(FibonacciRepository repository) {
+    public FibonacciService(FibonacciRepository repository, FibonacciStatsService statsService) {
         this.repository = repository;
+        this.statsService = statsService;
     }
 
     public long getFibonacci(int n) {
@@ -21,6 +23,7 @@ public class FibonacciService {
     
         Optional<FibonacciNumber> cached = repository.findById(n);
         if (cached.isPresent()) {
+            statsService.updateStats(n); 
             return cached.get().getValue();
         }
     
@@ -31,8 +34,11 @@ public class FibonacciService {
             b = temp;
         }
     
-        repository.save(new FibonacciNumber(n, b));  // Guarda "b"
-        return b;  // Devuelve "b"
+        repository.save(new FibonacciNumber(n, b));  
+
+        statsService.updateStats(n); 
+
+        return b;  
     }
     
     

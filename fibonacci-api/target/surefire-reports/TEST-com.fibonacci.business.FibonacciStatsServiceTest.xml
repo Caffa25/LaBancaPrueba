@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.fibonacci.controller.FibonacciControllerTest" time="7.136" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.fibonacci.business.FibonacciStatsServiceTest" time="0.341" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -10,7 +10,6 @@
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="America/Montevideo"/>
-    <property name="org.jboss.logging.provider" value="slf4j"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -31,8 +30,6 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
-    <property name="java.awt.headless" value="true"/>
     <property name="surefire.real.class.path" value="C:\Users\marti\AppData\Local\Temp\surefire5774818317153010870\surefirebooter-20250327205316250_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -51,9 +48,7 @@
     <property name="user.dir" value="C:\Users\marti\OneDrive\Escritorio\LaBancaPrueba\fibonacci-api"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="18572"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Apache\Maven\apache-maven-3.9.9\bin;C:\Users\marti\AppData\Local\Microsoft\WindowsApps;C:\Users\marti\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\marti\AppData\Local\GitHubDesktop\bin;C:\Users\marti\AppData\Roaming\npm;c:\Users\marti\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -63,27 +58,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="shouldReturnBadRequestForNegativeInput" classname="com.fibonacci.controller.FibonacciControllerTest" time="0.3">
-    <system-out><![CDATA[20:53:24.039 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.fibonacci.controller.FibonacciControllerTest]: FibonacciControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-20:53:25.273 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.fibonacci.FibonacciApiApplication for test class com.fibonacci.controller.FibonacciControllerTest
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.1)
-
-2025-03-27T20:53:26.987-03:00  INFO 18572 --- [           main] c.f.controller.FibonacciControllerTest   : Starting FibonacciControllerTest using Java 21.0.6 with PID 18572 (started by marti in C:\Users\marti\OneDrive\Escritorio\LaBancaPrueba\fibonacci-api)
-2025-03-27T20:53:26.990-03:00  INFO 18572 --- [           main] c.f.controller.FibonacciControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-27T20:53:29.859-03:00  INFO 18572 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-27T20:53:29.860-03:00  INFO 18572 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-27T20:53:29.870-03:00  INFO 18572 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
-2025-03-27T20:53:29.937-03:00  INFO 18572 --- [           main] c.f.controller.FibonacciControllerTest   : Started FibonacciControllerTest in 4.326 seconds (process running for 13.487)
-]]></system-out>
-  </testcase>
-  <testcase name="shouldReturnBadRequestForZeroInput" classname="com.fibonacci.controller.FibonacciControllerTest" time="0.013"/>
-  <testcase name="shouldReturnFibonacciNumber" classname="com.fibonacci.controller.FibonacciControllerTest" time="0.015"/>
-  <testcase name="shouldReturnFibonacciStats" classname="com.fibonacci.controller.FibonacciControllerTest" time="0.158"/>
+  <testcase name="shouldIncrementCountWhenStatsExist" classname="com.fibonacci.business.FibonacciStatsServiceTest" time="0.327"/>
+  <testcase name="shouldCreateNewStatsWhenNotExist" classname="com.fibonacci.business.FibonacciStatsServiceTest" time="0.007"/>
 </testsuite>
