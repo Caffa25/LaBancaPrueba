@@ -23,6 +23,6 @@ public class FibonacciController {
         }
 
         long result = service.getFibonacci(n);
-        return ResponseEntity.ok(HttpStatus.OK + " Fibonacci number: " + result);
+        return ResponseEntity.status(HttpStatus.OK).body(" Fibonacci number: " + result);
     }
 }
