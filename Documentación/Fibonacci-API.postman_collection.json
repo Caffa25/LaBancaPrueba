@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "66badc5f-6c55-41a5-a4b7-10d251d0ca3f",
+		"name": "Fibonacci-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22883520",
+		"_collection_link": "https://grey-water-23124.postman.co/workspace/Fibonacci-app~3db2cdf5-956b-4279-b44e-e3441cad8da1/collection/22883520-66badc5f-6c55-41a5-a4b7-10d251d0ca3f?action=share&source=collection_link&creator=22883520"
+	},
+	"item": [
+		{
+			"name": "Ejecución local",
+			"item": [
+				{
+					"name": "Get Fibonacci n",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fibonacci/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fibonacci",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fibonacci Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fibonacci/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fibonacci",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
